@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\MyProfileController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\MyProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +108,10 @@ Route::get('/tables', function () {
     return view('tables');
 });
 
+Route::get("/myprofile/create", [MyProfileController::class, "create"]);
+Route::get("/myprofile/{id}/edit", [MyProfileController::class, "edit"]);
+Route::get("/myprofile/{id}", [MyProfileController::class, "show"]);
+Route::get("/coronavirus", [MyProfileController::class, "coronavirus"]);
+Route::get("/newgallery", [MyProfileController::class, "gallery"]);
+Route::get("/newgallery/ant", [MyProfileController::class, "ant"]);
+Route::get("/newgallery/bird", [MyProfileController::class, "bird"]);
